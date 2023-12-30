@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/reujab/wallpaper"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	path, err := wallpaper.Get()
+	if err != nil {
+		fmt.Errorf("error getting wallpaper: %v", err)
+	}
+
+	fmt.Println(path)
 }
